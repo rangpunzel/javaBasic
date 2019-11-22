@@ -11,17 +11,17 @@ public class Exam03 {
 		int x = 2;
 		int y = 5;
 		char c = 'A'; // 'A'의 문자코드는 65
-		System.out.println(1 + x << 33);
-		System.out.println(y >= 5 || x < 0 && x > 2);
-		System.out.println(y += 10 - x++);
-		System.out.println(x+=2);
-		System.out.println( !('A' <= c && c <='Z') );
-		System.out.println('C'-c);
-		System.out.println('5'-'0');
-		System.out.println(c+1);
-		System.out.println(++c);
-		System.out.println(c++);
-		System.out.println(c);
+		System.out.println(1 + x << 33);    
+		System.out.println(y >= 5 || x < 0 && x > 2);   true
+		System.out.println(y += 10 - x++);    13
+		System.out.println(x+=2);    5
+		System.out.println( !('A' <= c && c <='Z') );    false
+		System.out.println('C'-c);   2
+		System.out.println('5'-'0');   5
+		System.out.println(c+1);  B
+		System.out.println(++c);  B
+		System.out.println(c++);  B
+		System.out.println(c);   C
 		}
 		}
 		
@@ -105,7 +105,8 @@ public class Exam03 {
 		다. 19의 경우 20이고, 81의 경우 90이 된다. 30에서 24를 뺀 나머지는 6이기 때문에 변
 		수 num의 값이 24라면 6을 결과로 얻어야 한다. (1)에 알맞은 코드를 넣으시오.
 		[Hint] 나머지 연산자를 사용하라.
-			//지선 답	num%10 != 0 ? ((num/10+1)*10)-num : 0
+			//지선 답	num%10 != 0 ? ((num/10+1)*10)-num : 10 
+			//10 - (num % 10)
 		
 		
 		[연습문제]/ch3/Exercise3_6.java
@@ -147,6 +148,7 @@ public class Exam03 {
 		class Exercise3_8 {
 		public static void main(String[] args) {
 		byte a = 10;
+		byte b = 20;
 		byte c = a + b;
 		char ch = 'A';
 		ch = ch + 2;
@@ -173,14 +175,19 @@ public class Exam03 {
 		//지선 답
 		byte a = 10;
 		byte b = 20;
-		int c = a + b;
+		byte c = (byte)(a + b);
+		
 		char ch = 'A';
 		ch = (char)(ch + 2);
+		
 		float f = 3 / 2f;
 		long l = 3000 * 3000 * 3000L;
+		
 		float f2 = 0.1f;
 		double d = 0.1;
+		
 		boolean result = (float)d==f2;
+		
 		System.out.println("c="+c);
 		System.out.println("ch="+ch);
 		System.out.println("f="+f);
@@ -194,7 +201,7 @@ public class Exam03 {
 		
 		[3-9] 다음은 문자형 변수 ch가 영문자(대문자 또는 소문자)이거나 숫자일 때만 변수 b
 		의 값이 true가 되도록 하는 코드이다. (1)에 알맞은 코드를 넣으시오.
-		//지선 답		ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9'
+		//지선 답 ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9'
 		
 		
 		[연습문제]/ch3/Exercise3_9.java
@@ -214,7 +221,8 @@ public class Exam03 {
 		[3-10] 다음은 대문자를 소문자로 변경하는 코드인데, 문자 ch에 저장된 문자가 대문자
 		인 경우에만 소문자로 변경한다. 문자코드는 소문자가 대문자보다 32만큼 더 크다. 예를
 		들어 'A‘의 코드는 65이고 ’a'의 코드는 97이다. (1)~(2)에 알맞은 코드를 넣으시오.
-			//지선 답	  ch <= 97       (char)(ch + 32)
+			// 지선 답	  ch < 97       (char)(ch + 32)
+			// 'A' <= ch && ch <= 'Z' ? (char)(ch + 32) : ch
 		
 		
 		[연습문제]/ch3/Exercise3_10.java
