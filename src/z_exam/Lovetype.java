@@ -14,7 +14,7 @@ public class Lovetype {
 		String d_type = "D타입 입니다. 무조건 잘해주고, 무조건 맞춰주는 다퍼주는 연애를 하는 타입!";
 			
 		String q1 = "나는 금사빠다(Y/N)";
-		String q2 = "연애할때 끌려다니는 타입니다(Y/N)";
+		String q2 = "연애할때 끌려다니는 타입이다(Y/N)";
 		String q3 = "데이트 코스는 미리 짜는게 편하다(Y/N)";
 		String q4 = "감정기복이 크지 않다(Y/N)";
 		String q5 =	"감정 표현에 솔직한 편이다(Y/N)";
