@@ -139,49 +139,56 @@ public class Lovetype {
 							System.out.println(d_type);
 						}else if(answer51.equals("N")){         //q9 N C
 							System.out.println(c_type);	
-					}else if(answer42.equals("N")){         //q8 N
+					}else if(answer42.equals("N")){         //q8 N B
 						System.out.println(b_type);	
 					}
 					}
 				}
-			}else if(answer40.equals("N")){         //q4 N
-				System.out.println(q5);		
+			} else if (answer40.equals("N")) { // q4 N
+				System.out.println(q5);
 				String answer43 = s.nextLine();
-				if(answer43.equals("Y")){         //q5 Y 
+				if (answer43.equals("Y")) { // q5 Y
 					System.out.println(q8);
 					String answer44 = s.nextLine();
-					if(answer44.equals("Y")){         //q8 Y 
+					if (answer44.equals("Y")) { // q8 Y
 						System.out.println(q9);
 						String answer45 = s.nextLine();
-					}else if(answer44.equals("N")){         //q8 N
-						System.out.println(b_type);}	
-				}else if(answer43.equals("N")){         //q5 N
-					System.out.println(q6);		
+						if (answer45.equals("Y")) { // q9 Y D
+							System.out.println(d_type);
+						} else if (answer45.equals("N")) { // q9 N C
+							System.out.println(c_type);
+						}
+					} else if (answer44.equals("N")) { // q8 N
+						System.out.println(b_type);
+					}
+				} else if (answer43.equals("N")) { // q5 N
+					System.out.println(q6);
 					String answer46 = s.nextLine();
-					if(answer46.equals("Y")){         //q6 Y 
+					if (answer46.equals("Y")) { // q6 Y
 						System.out.println(q8);
 						String answer47 = s.nextLine();
-						if(answer47.equals("Y")){         //q8 Y 
+						if (answer47.equals("Y")) { // q8 Y
 							System.out.println(q9);
 							String answer48 = s.nextLine();
-							if(answer48.equals("Y")){         //q9 Y D
+							if (answer48.equals("Y")) { // q9 Y D
 								System.out.println(d_type);
-							}else if(answer48.equals("N")){         //q9 N  C
-								System.out.println(c_type);	
-						}else if(answer47.equals("N")){         //q8 N B
-							System.out.println(b_type);	
+							} else if (answer48.equals("N")) { // q9 N C
+								System.out.println(c_type);
+							} else if (answer47.equals("N")) { // q8 N B
+								System.out.println(b_type);
+							}
 						}
-						}
-					}else if(answer46.equals("N")){         //q6 N
-						System.out.println(q9);	
+					} else if (answer46.equals("N")) { // q6 N
+						System.out.println(q9);
 						String answer49 = s.nextLine();
-						if(answer49.equals("Y")){         //q9 Y D
+						if (answer49.equals("Y")) { // q9 Y D
 							System.out.println(d_type);
-						}else if(answer49.equals("N")){         //q9 N  C
-							System.out.println(c_type);}
-					}				
-}
-						}			
-						}			
+						} else if (answer49.equals("N")) { // q9 N C
+							System.out.println(c_type);
+						}
+					}
+				}
+			}
+		}
 	}
 }
