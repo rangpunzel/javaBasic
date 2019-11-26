@@ -11,8 +11,8 @@ public class Exam04 {
 		// x > 10 && x < 20;
 		
 		2. char형 변수 ch가 공백이나 탭이 아닐 때 true인 조건식
-		// ch != ' '
-
+		// ch != ' ' && ch != '\t'
+		 * 
 		3. char형 변수 ch가 ‘x' 또는 ’X'일 때 true인 조건식
 		// ch == 'x' || ch == 'X'
 		 
@@ -24,15 +24,18 @@ public class Exam04 {
 		 
 		6. int형 변수 year가 400으로 나눠떨어지거나 또는 4로 나눠떨어지고 100으로 나눠떨어지지
 		않을 때 true인 조건식
-		// year%400 == 0 || year%4 == 0 && year%100 != 0
+		// (year%400 == 0 || year%4 == 0) && year%100 != 0
 		 
 		7. boolean형 변수 powerOn가 false일 때 true인 조건식
 		// powerOn == false
+		// !powerIn 
 		 
 		8. 문자열 참조변수 str이 “yes”일 때 true인 조건식
 		// str.equals("yes")
 		
 		*/
+		
+		
 		/*[4-2] 1부터 20까지의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오.
 		 
 		int sum = 0;
@@ -50,22 +53,33 @@ public class Exam04 {
 		
 		
 		int sum = 0;
-
-
 		for (int b = 1; b <= 10; b++) {
 			for (int a = 1; a <= b; a++) {
 			sum += a;
 			}
 		}
 		System.out.println(sum);
-		
 		*/
+		
 		
 		/*
 		[4-4] 1+(-2)+3+(-4)+... 과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이
 		100이상이 되는지 구하시오.
 		*/
+/*		int sum = 0;
+		int num = 0;
+		int s = 1;
 		
+		for(int i = 1; true; i++, s =-s){
+			num = i * s;
+			sum += num;
+			if(sum == 100){
+			break;
+			}
+		}
+			System.out.println(num);
+		System.out.println(sum);*/
+	
 		/*
 		[4-5] 다음의 for문을 while문으로 변경하시오.
 		[연습문제]/ch4/Exercise4_5.java
@@ -80,7 +94,6 @@ public class Exam04 {
 		} // end of class
 		
 //답		int i = 0;
-
 		while(i <= 10){
 			int j = 0;
 			while(j <= i){
@@ -109,7 +122,6 @@ public class Exam04 {
 		
 		
 		/*
-
 		[4-7] Math.random()을 이용해서 1부터 6사이의 임의의 정수를 변수 value에 저장하는
 		코드를 완성하라. (1)에 알맞은 코드를 넣으시오.
 		[연습문제]/ch4/Exercise4_7.java
@@ -124,15 +136,16 @@ public class Exam04 {
 		System.out.println("value:"+value);
 		
 		*/
+		//Math.random() : 0~1 미만의 수를 랜덤하게 발생
 		
 		/*
 		
 		[4-8] 방정식 2x+4y=10의 모든 해를 구하시오. 단, x와 y는 정수이고 각각의 범위는
 		0<=x<=10, 0<=y<=10 이다.
 		
-//답  	for(int x = 0; x <= 10; x+=2){
-			for(int y = 0; y <= 10; y+=4){
-				if(x+y == 10){
+//답  	for(int x = 0; x <= 10; x++){
+			for(int y = 0; y <= 10; y++){
+				if(2*x+4*y == 10){
 				System.out.println("x 값 " + x +" y값 "+ y +" = " + (x+y));
 				}
 			}
@@ -183,6 +196,19 @@ public class Exam04 {
 		System.out.println("sum="+sum);
 		}
 		}
+		*/
+		
+/*		int num = 12345;
+		int sum = 0;
+		
+		while(num != 0){
+			sum = sum + num%10;
+					num = num/10;
+		}System.out.println(sum);*/
+		
+		
+		
+		/*
 		[4-11] 피보나치(Fibonnaci) 수열(數列)은 앞을 두 수를 더해서 다음 수를 만들어 나가
 		는 수열이다. 예를 들어 앞의 두 수가 1과 1이라면 그 다음 수는 2가 되고 그 다음 수는
 		1과 2를 더해서 3이 되어서 1,1,2,3,5,8,13,21,... 과 같은 식으로 진행된다. 1과 1부터
@@ -196,18 +222,70 @@ public class Exam04 {
 		int num3 = 0; // 세번째 값
 		System.out.print(num1+","+num2);
 		for (int i = 0 ; i < 8 ; i++ ) {
-		
-		(1) 알맞은 코드를 넣어 완성하시오.
+		num3 = num1 + num2;
+		System.out.println(num1+","+num2);
+		for(int i = 0; i < 8 ; i ++){
+		num3 = num1 + num2;
+		System.out.print(", "+ num3);
+		num1 = num2;
+		num2 = num3;
 		
 		}
 		} // end of main
 		} // end of class
 		[실행결과]
-		15
-		[실행결과]
 		1,1,2,3,5,8,13,21,34,55
-
+		
+		*/
+			
+		
+		/*
 		[4-12] 구구단의 일부분을 다음과 같이 출력하시오.
+		//답 
+		for (int j = 1; j <= 3; j++) {
+			for (int i = 2; i <= 9; i++) {
+
+				if (i >= 2 && i <= 4) {
+					System.out.print(i + "*" + j + "=" + (i * j) + "\t");
+				}	
+			}System.out.println();
+		}
+		System.out.println();
+		
+		for (int j = 1; j <= 3; j++) {
+			for (int i = 2; i <= 9; i++) {
+
+				if (i >= 5 && i <= 7) {
+					System.out.print(i + "*" + j + "=" + (i * j) + "\t");
+				}	
+			}System.out.println();
+		}
+		System.out.println();
+		
+		for (int j = 1; j <= 3; j++) {
+			for (int i = 2; i <= 9; i++) {
+
+				if (i >= 8 && i <= 9) {
+					System.out.print(i + "*" + j + "=" + (i * j) + "\t");
+				}	
+			}System.out.println();
+		}
+		System.out.println();
+		
+		
+				[실행결과]
+		2*1=2 3*1=3 4*1=4
+		2*2=4 3*2=6 4*2=8
+		2*3=6 3*3=9 4*3=12
+		5*1=5 6*1=6 7*1=7
+		5*2=10 6*2=12 7*2=14
+		5*3=15 6*3=18 7*3=21
+		8*1=8 9*1=9
+		8*2=16 9*2=18
+		8*3=24 9*3=27
+		
+		
+		
 		[4-13] 다음은 주어진 문자열(value)이 숫자인지를 판별하는 프로그램이다. (1)에 알맞
 		은 코드를 넣어서 프로그램을 완성하시오.
 		[연습문제]/ch4/Exercise4_13.java
@@ -232,19 +310,14 @@ public class Exam04 {
 		}
 		} // end of main
 		} // end of class
-		[실행결과]
-		2*1=2 3*1=3 4*1=4
-		2*2=4 3*2=6 4*2=8
-		2*3=6 3*3=9 4*3=12
-		5*1=5 6*1=6 7*1=7
-		5*2=10 6*2=12 7*2=14
-		5*3=15 6*3=18 7*3=21
-		8*1=8 9*1=9
-		8*2=16 9*2=18
-		8*3=24 9*3=27
+
 		[실행결과]
 		12o34는 숫자가 아닙니다.
-		Java의 정석定石 3판 - 연습문제 풀이 19
+
+		*/
+		
+		
+		/*
 		[4-14] 다음은 숫자맞추기 게임을 작성한 것이다. 1과 100사이의 값을 반복적으로 입력
 		해서 컴퓨터가 생각한 값을 맞추면 게임이 끝난다. 사용자가 값을 입력하면, 컴퓨터는 자
 		신이 생각한 값과 비교해서 결과를 알려준다. 사용자가 컴퓨터가 생각한 숫자를 맞추면
@@ -256,7 +329,7 @@ public class Exam04 {
 		public static void main(String[] args)
 		{
 		// 1~100사이의 임의의 값을 얻어서 answer에 저장한다.
-		int answer =  (1) ;
+		int answer =  (int)(Math.random())*100 + 1;
 		int input = 0; // 사용자입력을 저장할 공간
 		int count = 0; // 시도횟수를 세기위한 변수
 		// 화면으로 부터 사용자입력을 받기 위해서 Scanner클래스 사용
@@ -266,7 +339,17 @@ public class Exam04 {
 		System.out.print("1과 100사이의 값을 입력하세요 :");
 		input = s.nextInt(); // 입력받은 값을 변수 input에 저장한다.
 		
-		(2) 알맞은 코드를 넣어 완성하시오.
+		if(input < answer){
+			System.out.println("더 큰 수를 입력하세요.");
+		}else if(input > answer){
+			System.out.println("더 작은 수를 입력하세요.");
+		}else {
+
+		
+			System.out.println("맞췄습니다.");
+			break;
+
+		}
 		
 		} while(true); // 무한반복문
 		} // end of main
@@ -285,7 +368,9 @@ public class Exam04 {
 		1과 100사이의 값을 입력하세요 :76
 		맞췄습니다.
 		시도횟수는 6번입니다.
-		20 Java의 정석定石 3판 - 연습문제 풀이
+*/
+		
+		/*
 		[4-15] 다음은 회문수를 구하는 프로그램이다. 회문수(palindrome)란, 숫자를 거꾸로 읽
 		어도 앞으로 읽는 것과 같은 수를 말한다. 예를 들면 ‘12321’이나 ‘13531’같은 수를 말한
 		다. (1)에 알맞은 코드를 넣어서 프로그램을 완성하시오.
@@ -311,6 +396,21 @@ public class Exam04 {
 		}
 		[실행결과]
 		12321는 회문수 입니다.*/
+		
+/*		int number = 12321;
+		int tmp = number;
+		int result =0; // 변수 number를 거꾸로 변환해서 담을 변수
+		while(tmp !=0) {
+		
+		result *= 10;
+		result += tmp % 10;
+		tmp /= 10;
+		
+		}
+		if(number == result)
+		System.out.println( number + "는 회문수 입니다.");
+		else
+		System.out.println( number + "는 회문수가 아닙니다.");*/
 		
 		
 	}
