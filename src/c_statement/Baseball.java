@@ -28,12 +28,8 @@ public class Baseball {
 
 			int result = answer1 * 100 + answer2 * 10 + answer3;
 
-			int inputa = 0;
-			int inputb = 0;
-			int inputc = 0;
-			int s = 0;
-			int b = 0;
-			int o = 0;
+			int inputa, inputb, inputc = 0;
+			int s, b, o;
 
 			do {
 				System.out.println("숫자를 입력해주세요 >");
