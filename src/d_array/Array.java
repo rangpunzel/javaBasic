@@ -106,9 +106,10 @@ public class Array {
 		}
 		
 		//배열에 저장된 숫자들 중 최소값과 최대값을 찾아주세요.
-		//최소값, 최대값 변수 0번 인덱스부터 저장해서 비교.
+		//최소값, 최대값 변수 0번 인덱스부터 저장해서 비교.		
 		
-		int min = numbers[0];
+		
+	int min = numbers[0];
 		int max = numbers[0];
 		
 		for(int i = 1; i < numbers.length; i++){
