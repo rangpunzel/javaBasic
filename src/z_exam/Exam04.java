@@ -166,7 +166,7 @@ public class Exam04 {
 		int sum = 0;
 		for(int i=0; i < str.length(); i++) {
 		
-		(1) 알맞은 코드를 넣어 완성하시오.
+					sum += (str.charAt(i)-'0');
 		
 		}
 		System.out.println("sum="+sum);
@@ -174,10 +174,7 @@ public class Exam04 {
 		}
 		[실행결과]
 		15
-		[실행결과]
-		x=1, y=2
-		x=3, y=1
-		x=5, y=0
+
 */
 		
 /*
@@ -300,7 +297,15 @@ public class Exam04 {
 		// 하나씩 읽어서 검사한다.
 		for(int i=0; i < value.length() ;i++) {
 		
-		(1) 알맞은 코드를 넣어 완성하시오.
+		
+		
+					 ch = value.charAt(i);
+			 if(ch >= '0' && ch <= '9'){
+				 isNumber = false;
+			 }
+		   
+		   
+		   
 		
 		}
 		if (isNumber) {

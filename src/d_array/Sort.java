@@ -29,16 +29,14 @@ public class Sort {
 		System.out.println(Arrays.toString(numbers));
 
 //		selectSort(numbers); // 선택 정렬
-		bubbleSort(numbers); // 버블 정렬
+//		bubbleSort(numbers); // 버블 정렬
 //		insertSort(numbers); // 삽입 정렬
-//		printRank(numbers); //석차구하기
+		printRank(numbers); //석차구하기
 		
+				
+//		System.out.println(Arrays.toString(numbers));    //정렬 프린트
 		
-		
-		System.out.println(Arrays.toString(numbers));    //정렬 프린트
-		
-		
-		
+
 		
 	}
 
@@ -51,25 +49,26 @@ public class Sort {
 		int rank[] = new int[numbers.length];
 		
 		for(int a = 0;a < rank.length;a++){
-			rank[a] += 1;
+			rank[a] = 1;
 		}
 		
 		for(int i = 0;i < numbers.length;i++){
 		
-			for(int j = 1;j < numbers.length;j++){
+			for(int j = 0;j < numbers.length;j++){
 			if(numbers[i] < numbers[j]){
-				rank[i] += 1;
-			}
-				
-				
+				rank[i] ++;
+				}
+
 			}
 		}
 		
-		
-		System.out.println(Arrays.toString(rank));
-
+		for(int i = 0; i < numbers.length ; i++){
+		System.out.println(numbers[i] + " : " + rank[i] + "등");
+		}
 		
 	}
+	
+	
 
 	private static void insertSort(int[] numbers) {
 		//삽입 정렬 메서드
