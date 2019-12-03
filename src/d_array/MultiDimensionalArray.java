@@ -75,6 +75,8 @@ public class MultiDimensionalArray {
 				System.out.println("총점 : " + sum[i] + " /평균 : " + avg[i]);
 		}
 		
+
+		
 		
 		
 
