@@ -576,11 +576,14 @@ public class Exam05 {
 				
 				//답
 				char tmp=' ';
+				for(int j =0;j<question.length*20;j++){
 				int random = (int)(Math.random()*question.length);
 				
 				tmp = question[0];
 				question[0] = question[random];
 				question[random] = tmp;
+				
+				}
 				//
 				
 				
