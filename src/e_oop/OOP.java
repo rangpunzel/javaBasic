@@ -1,5 +1,9 @@
 package e_oop;
 
+import java.awt.color.CMMException;
+
+import javax.swing.JOptionPane;
+
 public class OOP {
 
 	public static void main(String[] args) {
@@ -30,6 +34,46 @@ public class OOP {
 		
 		//test1() 호출시 출력되는 문장에 번호를 붙여주세요.
 		sc.test1();
+		
+		
+		//방금 만든 클래스의 객체를 생성하고 변수에 저장해주세요.
+		ClassMaker cm = new ClassMaker();
+		//객체가 저장된 변수를 통해 메서드들을 호출해주세요.
+		//파라미터가 있는 메서드는 타입에 맞는 값을 넘겨주시고,
+		//리턴타입이 있는 메서드는 리턴받은 값을 출력해주세요.
+
+		
+		cm.js1();
+		
+		
+		int a = cm.js2();
+		System.out.println(a);
+		
+		cm.js3(5);
+		
+		int b = cm.js4(5, 66);
+		System.out.println(b);
+
+		
+		//다음을 한줄씩 계산해서 최종 결과값을 출력해주세요.
+		//1. 123456 + 654321
+		//2. 1번의 결과값 * 123456
+		//3. 2번의 결과값 / 123456
+		//4. 3번의 결과값 - 654321
+		//5. 4번의 결과값%123456
+		Calculator c = new Calculator();
+		
+		double a1 = 123456;
+		double a2 = 654321;
+		
+		double result = c.plus(a1, a2);
+		result = c.multiply(result, a1);
+		result = c.divide(result, a1);
+		result = c.minus(result, a2);
+		result = c.remainder(result, a1);
+		System.out.println(result);
+		
+		
 	}
 
 }
