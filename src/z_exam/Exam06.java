@@ -16,10 +16,7 @@ public class Exam06 {
 		}
 		*/
 		
-//		SutdaCard{
-//			int num;
-//			boolean isKwang;
-//		}
+
 		
 /*		[6-2] 문제6-1에서 정의한 SutdaCard클래스에 두 개의 생성자와 info()를 추가해서 실행
 		결과와 같은 결과를 얻도록 하시오.
@@ -49,7 +46,6 @@ public class Exam06 {
 		}
 		String info(){
 			return num+(isKwang? "k" : "");
-			
 		}
 		}
 		[실행결과]
@@ -118,13 +114,11 @@ public class Exam06 {
 			int math; //수학점수
 			
 			int getTotal(){
-				int a = kor + eng + math;
-				return a;
+				return kor + eng + math;
 			}
 			
 			float getAverage(){
-				float a = (int)(((kor + eng + math)/3f*10)+0.5)/10f;
-				return a;
+				return (int)((getTotal()/3f*10)+0.5)/10f;
 			}
 		}[실행결과]
 		이름:홍길동
@@ -161,7 +155,7 @@ public class Exam06 {
 		int math; //수학점수
 		
 	
-	public Student(String name, int ban, int no, int kor, int eng, int math) {
+	Student(String name, int ban, int no, int kor, int eng, int math) {
 		this.name = name;
 		this.ban = ban;
 		this.no = no;
@@ -171,17 +165,16 @@ public class Exam06 {
 	}		
 
 	int getTotal(){
-		int a = kor + eng + math;
-		return a;
+		return kor + eng + math;
 	}
 	
 	float getAverage(){
-		float a = (int)(((kor + eng + math)/3f*10)+0.5)/10f;
-		return a;
+		return (int)((getTotal/3f*10)+0.5)/10f;
 	}
 	
-	public String info(){
-		return name+","+ban+","+no+","+kor+","+eng+","+math+","+getTotal()+","+getAverage();
+	String info(){
+		return name+","+ban+","+no+","+kor+","+eng+","
+		+math+","+getTotal()+","+getAverage();
 		
 	}
 		
@@ -201,6 +194,9 @@ public class Exam06 {
 		static double getDistance(int x, int y, int x1, int y1) {
 		
 		(1) 알맞은 코드를 넣어 완성하시오.
+		return Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1)); // x, y는 지역변수
+		}
+
 		
 		}
 		public static void main(String args[]) {
@@ -222,7 +218,9 @@ public class Exam06 {
 		this.y = y;
 		}
 		
-		(1) 인스턴스메서드 getDistance를 작성하시오.
+		double getDistance(int x1, int y1) {
+		return Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1)); // x, y는 인스턴스 변수
+		}
 		
 		}
 		class Exercise6_7 {
@@ -251,9 +249,8 @@ public class Exam06 {
 		}
 		- 클래스변수(static변수) :  width, height
 		- 인스턴스변수 : kind, num
-		- 지역변수 : k, n, card, args[]
-		[실행결과]
-		1.4142135623730951
+		- 지역변수 : k, n, card, args
+
 		*/
 		
 		/*
@@ -267,10 +264,10 @@ public class Exam06 {
 		int hp = 60; // 현재 체력
 		static int weapon = 6; // 공격력
 		static int armor = 0; // 방어력
-		static void weaponUp() {
+		void weaponUp() {
 		weapon++;
 		}
-		static void armorUp() {
+		void armorUp() {
 		armor++;
 		}
 		void move(int x, int y) {
@@ -419,6 +416,17 @@ public class Exam06 {
 		}
 		*/
 		
+		String str = "ABC123";
+		System.out.println(str);
+		str = new Exam06().change(str);
+		System.out.println("After change:"+str);
+		}
+	
+		public String change(String str){
+			
+			return str +="456";
+		
+		
 		/*
 		[6-20] 다음과 같이 정의된 메서드를 작성하고 테스트하시오.
 		[주의] Math.random()을 사용하는 경우 실행결과와 다를 수 있음.
@@ -535,6 +543,7 @@ public class Exam06 {
 		
 		(1) isNumber메서드를 작성하시오.
 		//답
+		static boolean isNumber(String str){
 		if(str==null || str.equals("")){
 		return false;
 		}
@@ -553,7 +562,7 @@ public class Exam06 {
 		System.out.println(str+"는 숫자입니까? "+isNumber(str));
 		str = "1234o";
 		System.out.println(str+"는 숫자입니까? "+isNumber(str));
-		}
+			}
 		}
 		*/
 		
