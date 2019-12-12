@@ -74,6 +74,16 @@ public class Ingeritance {
 		t.setSecond(100000);
 		
 		System.out.println(t);
+		
+		Singleton s = Singleton.getInstance();
+		
+		System.out.println(Singleton.getInstance());
+		System.out.println(Singleton.getInstance());
+		System.out.println(Singleton.getInstance());
+
+		System.out.println(new Ingeritance());  //싱글톤이 아니면 3번 다 다른 주소의 객체가 나온다..
+		System.out.println(new Ingeritance());
+		System.out.println(new Ingeritance());
 	}
 
 }
