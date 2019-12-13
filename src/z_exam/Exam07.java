@@ -16,7 +16,7 @@ public class Exam07 {
 		
 /*		[7-3] 오버라이딩의 정의와 필요성에 대해서 설명하시오.
   			//부모로부터 상속받은 메소드의 수정이 필요할때 사용.
- 			//리턴타입, 메서드명, 파라미터가 같아야하고 접근제어가 상속받은거보다 클수없다.
+ 			//리턴타입, 메서드명, 파라미터가 같아야하고 접근제어가 상속받은거보다 좁을수없다
   
 */
 		
@@ -49,7 +49,7 @@ public class Exam07 {
 		}
 		
 		class Tv extends Product {
-		Tv() {}
+		Tv() {}                           //super하고 파라미터를 넣어주거나 기본 생성자를 추가해줘야함..
 		public String toString() {
 		return "Tv";
 		}
@@ -57,7 +57,7 @@ public class Exam07 {
 		
 		class Exercise7_5 {
 		public static void main(String[] args) {
-		Tv t = new Tv();
+		Tv t = new Tv();       
 		}
 		}
 		
@@ -66,7 +66,7 @@ public class Exam07 {
 		/*
 		[7-6] 자손 클래스의 생성자에서 조상 클래스의 생성자를 호출해야하는 이유는 무엇인
 		가?
-		//생성자는 상속이 안됨... 초기화를 해주려고..
+		//생성자는 상속이 안됨... 부모클래스의 인스턴스 변수들을 초기화를 해주려고..
 		*/
 		
 		/*
@@ -82,7 +82,7 @@ public class Exam07 {
 		Parent(int x) {  			 //4
 		this.x = x;
 		}
-		int getX() {			
+		int getX() {			//5 object
 		return x;
 		}
 		}
@@ -92,7 +92,7 @@ public class Exam07 {
 		this(1000);
 		}
 		Child(int x) {			 //2
-		this.x = x;
+		this.x = x;              //컴파일러가 파라미터 없는 super를 소환함
 		}
 		}
 		class Exercise7_7 {
@@ -120,7 +120,7 @@ public class Exam07 {
 		// c
 		a. 지역변수 - 값을 변경할 수 없다.
 		b. 클래스 - 상속을 통해 클래스에 새로운 멤버를 추가할 수 없다.
-		c. 메서드 - 오버로딩을 할 수 없다.
+		c. 메서드 - 오버로딩을 할 수 없다.   //오버로딩x 오버라이딩
 		d. 멤버변수 - 값을 변경할 수 없다.
 		*/
 		
@@ -254,7 +254,8 @@ public class Exam07 {
 		
 		/*
 		[7-13] Math클래스의 생성자는 접근 제어자가 private이다. 그 이유는 무엇인가?
-		//수정을 막기 위해..
+		//수정할 이유가 없어서..
+		 //인스턴스 생성을 막으려고..
 		*/
 		
 
@@ -297,29 +298,25 @@ public class Exam07 {
 		/*
 		[7-17] 아래 세 개의 클래스로부터 공통부분을 뽑아서 Unit이라는 클래스를 만들고, 이
 		클래스를 상속받도록 코드를 변경하시오.
-		abstract class Unit{
-		
+		class Unit{
 		int x, y; // 현재 위치
 		abstract void move(int x, int y) {  지정된 위치로 이동  }
 		void stop() {  현재 위치에 정지  }
 
 		}
 		class Marine extends Unit { // 보병
-		int x, y; // 현재 위치
-		void move(int x, int y) {  지정된 위치로 이동  }
-		void stop() {  현재 위치에 정지  }
+
 		void stimPack() {  스팀팩을 사용한다.}
 		}
+		
+		
 		class Tank extends Unit  { // 탱크
-		int x, y; // 현재 위치
-		void move(int x, int y) {  지정된 위치로 이동  }
-		void stop() {  현재 위치에 정지  }
+
 		void changeMode() {  공격모드를 변환한다. }
 		}
+		
 		class Dropship extends Unit  { // 수송선
-		int x, y; // 현재 위치
-		void move(int x, int y) {  지정된 위치로 이동  }
-		void stop() {  현재 위치에 정지  }
+
 		void load() {  선택된 대상을 태운다. }
 		void unload() {  선택된 대상을 내린다. }
 		}
@@ -329,14 +326,16 @@ public class Exam07 {
 		[7-20] 다음의 코드를 실행한 결과를 적으시오.
 		
 		//100
+		//Child Method
 		//200
+		//Child Method
 		 
 		[연습문제]/ch7/Exercise7_20.java
 		
 		class Exercise7_20 {
 		public static void main(String[] args) {
 		
-		Parent p = new Child();
+		Parent p = new Child();       //변수는 타입을 따라가고 메서드는 오버라이딩 된걸로 따라간다.
 		Child c = new Child();
 		
 		System.out.println("p.x = " + p.x);

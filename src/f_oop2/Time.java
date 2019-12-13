@@ -2,9 +2,11 @@ package f_oop2;
 
 public class Time {
 	
-	private int hour;
+	private int hour;   //메소드를 통해서 접근하려고 변수에 private 사용, 값을 임의로 넣지 못하게!
 	private int minute;
 	private int second;
+	
+	//private 변수에 값을 넣을때 getter(저장된 값을 받아오겠다) setter(값을저장)를 사용
 	
 	public int getHour() {
 		return hour;
