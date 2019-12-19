@@ -102,11 +102,7 @@ public class ArrayListScore {
 			}
 		}
 
-		for(int i = 0; i < scores.size();i++){
-			System.out.println(scores.get(i));
-		}
-		
-		
+
 		
 		
 		//출력한다.
